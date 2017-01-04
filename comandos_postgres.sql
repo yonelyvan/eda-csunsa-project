@@ -6,6 +6,7 @@ initdb
 
 ----------comandos
 psql -l       --ver/listar bases de datos
+createdb DemoDB  --crear base de datos
 psql name_db  --seleccionar una base de datos "name_db"
 \dt           --ver/listar tablas
 \df           --ver/listar funciones
