@@ -14,6 +14,7 @@ psql name_db  --seleccionar una base de datos "name_db"
 
 
 ----------- algunas consultas
+drop function funcion(text);  --eliminar funciones: DROP FUNCTION name ( [ type [, ...] ] );
 
 
 
