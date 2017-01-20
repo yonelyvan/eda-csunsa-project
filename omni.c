@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define D 2 // x,y
-#define Kn 3 //numero Ks
-#define c 20 //numero de caracteres nombre de la imagen
+#define D 2  	// x,y
+#define Kn 3 	//numero Ks
+#define c 20 	//numero de caracteres nombre de la imagen
 /*
-t_ dipo de dato
+	t_ dipo de dato
 */
 typedef double t_distancia;
 typedef char t_name;
@@ -37,30 +37,10 @@ void push_record(node *n); /*se inserta un record al final del archivo*/
 void read(t_id id);/*lee un registro dado una clave id*/
 v_distances f_compute_distance(v_features vf, VKn mK);/*retorna listancia del objeto a cada k*/
 void insert(t_id id,v_features vf, VKn Ks);/*inserar en registro*/
+void search(v_features vf);/*busqueda por radio*/
 
 
 
-int main(){
-	VKn Ki;
-	Ki.matrix[0][0]=0;
-	Ki.matrix[0][1]=10;
-
-	Ki.matrix[1][0]=1;//1
-	Ki.matrix[1][1]=1;
-	
-	Ki.matrix[2][0]=1;//1
-	Ki.matrix[2][1]=10;
-
-	v_features vc;
-	for (int i = 0; i < D; ++i){
-		vc.vector[i]=6*10.0;
-	}
-	insert(100,vc,Ki);
-	for (int i = 0; i < 5; ++i){
-		read(i);
-	}
-	return 0;
-}
 
 void insert(t_id id,v_features vf, VKn Ks){
 	node n;
