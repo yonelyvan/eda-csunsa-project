@@ -8,15 +8,26 @@
 counter cont; /*numero total de objetos*/
 matrix_kf _matrix_kf;
 
-/*
+
 void search(v_feature vf , radio r){
-	for (t_entero_loop i = 0; i < D; ++i){
-		for (t_entero_loop i = 0; i < cont; ++i){
-			//f_compute_distance(vf,_matrix_kf);
+	v_distance vd=( v_distance )malloc(Kn); 
+	vd=f_compute_distance(vf,_matrix_kf);//distancia del objeto consulta a cada K  
+
+	heap h;
+	heap_init(&h);
+	for (t_entero_loop i = 0; i < cont; ++i){
+		bool b=true;
+		for (t_entero_loop j = 0; j < Kn; ++j){	
+			if(  (vd[j]-r <= _matrix_kf[i][j]) &&  (_matrix_kf[i][j] <= vd[j]+r)  ){
+				b=false;
+				break;
+			}	
+		}
+		if( b ){
+			heap_push(&h,)
 		}
 	}
 }
-*/
 
 
 void insert(t_id id,v_feature vf, matrix_kf Ks){

@@ -3,7 +3,9 @@
 **********************/
 #define D 2  	// x,y
 #define Kn 3 	//numero Ks
-
+#define true 1
+#define false 0
+typedef int bool;
 typedef double t_distancia;
 typedef char t_name;
 typedef unsigned int t_id;
