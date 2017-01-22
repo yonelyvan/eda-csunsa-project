@@ -5,28 +5,12 @@
 #include "heap.c"
 
 
-counter cont; /*numero total de objetos*/
+counter cont;
 matrix_kf _matrix_kf;
 
 
 void search(v_feature vf , radio r){
-	v_distance vd=( v_distance )malloc(Kn); 
-	vd=f_compute_distance(vf,_matrix_kf);//distancia del objeto consulta a cada K  
-
-	heap h;
-	heap_init(&h);
-	for (t_entero_loop i = 0; i < cont; ++i){
-		bool b=true;
-		for (t_entero_loop j = 0; j < Kn; ++j){	
-			if(  (vd[j]-r <= _matrix_kf[i][j]) &&  (_matrix_kf[i][j] <= vd[j]+r)  ){
-				b=false;
-				break;
-			}	
-		}
-		if( b ){
-			heap_push(&h,)
-		}
-	}
+	/* implementing */
 }
 
 
@@ -57,7 +41,7 @@ v_distance f_compute_distance(v_feature vf, matrix_kf mK){
 
 
 
-void push_record(node *n){ //se inserta un record al final
+void push_record(node *n){ 
 	FILE *file;
 	file = fopen("index.dat", "a");
 	fseek( file, sizeof(node), SEEK_END);
